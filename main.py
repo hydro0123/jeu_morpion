@@ -41,6 +41,9 @@ def verif():
 while fin == False:
     plateau()
     time.sleep(1)
+    if tour == 9:
+      print("match nul")
+      break
     if t_adversaire == False:
         print("au tour de ",pseudo_joueur)
     else:
@@ -49,9 +52,6 @@ while fin == False:
     coup=int(input("Quelle case ?"))
     if str(cases[coup])=="x" or str(cases[coup])=="o":
         print("case déjà jouée.")
-        if tour == 9:
-          print("match nul")
-          break
         time.sleep(2)
         continue
     if t_adversaire == False:
@@ -69,10 +69,8 @@ while fin == False:
             break
         continue
     print("Erreur inatendue.")
-    if tour == 8:
-      print("match nul")
-      break
-time.sleep(3)
+
+time.sleep(2)
 print("La partie est terminé!")
 time.sleep(1)
 print("voici le plateau a la fin:")
